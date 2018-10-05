@@ -15,6 +15,8 @@ import { ChangeUserComponent } from './change-user/change-user.component';
 import { HomeArtistComponent } from './home-artist/home-artist.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {CustomMaterialComponent} from "./CustomMaterialComponent";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import {HttpClientModule} from "@angular/common/http";
     RouterModule.forRoot(ROUTES),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    CustomMaterialComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
