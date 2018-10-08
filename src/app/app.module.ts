@@ -17,6 +17,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CustomMaterialComponent} from "./CustomMaterialComponent";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {CustomMaterialComponent} from "./CustomMaterialComponent";
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CustomMaterialComponent
+    CustomMaterialComponent,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
