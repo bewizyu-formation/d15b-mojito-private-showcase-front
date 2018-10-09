@@ -34,6 +34,7 @@ import {MenuUserSettingsComponent} from './menu-user-settings/menu-user-settings
     FormulaireEventComponent,
     ChangeUserComponent,
     HomeArtistComponent,
+    HomeArtistComponent,
     HeaderLoginComponent,
     HomeArtistComponent,
     DescriptionArtisteComponent,
