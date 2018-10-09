@@ -18,6 +18,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CustomMaterialComponent} from "./CustomMaterialComponent";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { DescriptionArtisteComponent } from './description-artiste/description-artiste.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     EventComponent,
     FormulaireEventComponent,
     ChangeUserComponent,
-    HomeArtistComponent
+    HomeArtistComponent,
+    DescriptionArtisteComponent
   ],
   imports: [
     BrowserModule,

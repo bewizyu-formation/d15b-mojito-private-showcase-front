@@ -1,0 +1,38 @@
+.page {
+  background: #9b9b9b;
+  color: white;
+}
+
+.subtitle {
+  font-family: Roboto;
+  font-size: 24px;
+  margin-left: 15%;
+}
+
+.rectangle {
+  width: 80%;
+  height: 298px;
+  background-color: #fafafa;
+  border: solid 1px #979797;
+  margin-left: 10%;
+}
+
+.avatar {
+  width: 277px;
+  height: 245px;
+  margin-left: 38px;
+}
+
+.description-artist {
+  margin-left: 47px;
+}
+
+.name-artiste {
+  padding-top: 22px;
+}
+
+.etoile {
+  width: 17.1px;
+  height: 16.3px;
+  background-color: #f5a623
+}
