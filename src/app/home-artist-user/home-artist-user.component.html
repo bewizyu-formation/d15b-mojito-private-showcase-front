@@ -1,3 +1,36 @@
-<p>
-  home-artist-user works!
-</p>
+<div class="page">
+
+  <mat-toolbar class="header">
+    <p class="title">Fiche artiste</p>
+  </mat-toolbar>
+
+  <app-description-artiste></app-description-artiste>
+  <mat-toolbar class="rectangle2" >
+    <div fxLayout="column" class="infos">
+      <div fxFlex="row" >
+        <img class="icone" src="../assets/images/baseline_alternate_email_black_18dp.png">
+        <a class="coordonnées">email</a>
+      </div>
+      <div fxFlex="row">
+        <img class="icone" src="../assets/images/baseline_perm_phone_msg_black_18dp.png">
+        <a class="coordonnées">telephone</a>
+      </div>
+      <div fxFlex="row">
+        <img class="icone" src="../assets/images/baseline_email_black_18dp.png">
+        <a class="coordonnées">adresse</a>
+      </div>
+    </div>
+    <div fxLayout="column" class="infos">
+      <div>
+        <span>
+          <p>Départements acceptés :</p>
+          <mat-chip-list>
+            <mat-chip>Dept 1</mat-chip>
+            <mat-chip>Dept 2</mat-chip>
+          </mat-chip-list>
+        </span>
+      </div>
+    </div>
+  </mat-toolbar>
+
+</div>
