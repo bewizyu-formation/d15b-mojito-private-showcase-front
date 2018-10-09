@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-event',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventComponent implements OnInit {
 
-  constructor() { }
+  login: string = 'nnnnnn';
+
+  constructor(private router: Router) { }
+
+  navigateToHomeArtiste () {
+    this.router.navigate(['home', this.login]);
+  }
 
   ngOnInit() {
   }
