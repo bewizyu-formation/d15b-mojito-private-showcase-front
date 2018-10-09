@@ -1,5 +1,29 @@
 
+<div class="page">
 
-<p>
-  formulaire-event works!
-</p>
+  <mat-toolbar class="header">
+    <p class="title">Créez un évènement</p>
+  </mat-toolbar>
+
+  <app-description-artiste></app-description-artiste>
+
+  <mat-toolbar class="rectangle">
+
+    <form class="formulaire">
+      <div class="input-place">
+        <mat-form-field class="input-persons">
+          <input matInput [matDatepicker]="picker" placeholder="Choisir une date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="input-persons">
+          <input matInput placeholder="Nombre de personne max" class="label" value="">
+        </mat-form-field>
+      </div>
+    </form>
+
+  </mat-toolbar>
+
+</div>
