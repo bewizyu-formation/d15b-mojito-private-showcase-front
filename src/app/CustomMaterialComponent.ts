@@ -1,5 +1,5 @@
 import {
-  MatButtonModule,
+  MatButtonModule, MatCardModule,
   MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatFormFieldModule, MatIconModule,
   MatInputModule,
   MatListModule, MatMenuModule,
@@ -9,8 +9,8 @@ import {NgModule} from "@angular/core";
 
 @NgModule({
   imports: [MatButtonModule, MatCheckboxModule,MatProgressBarModule,MatListModule,MatInputModule,MatFormFieldModule,
-    MatSelectModule,MatCheckboxModule,MatDatepickerModule,MatToolbarModule,MatMenuModule,MatChipsModule,MatIconModule,MatDialogModule],
+    MatSelectModule,MatCheckboxModule,MatDatepickerModule,MatToolbarModule,MatMenuModule,MatChipsModule,MatIconModule,MatDialogModule,MatCardModule],
   exports: [MatButtonModule, MatCheckboxModule,MatProgressBarModule,MatListModule,MatInputModule,MatFormFieldModule,
-    MatSelectModule,MatCheckboxModule,MatDatepickerModule,MatToolbarModule,MatMenuModule,MatChipsModule,MatIconModule,MatDialogModule],
+    MatSelectModule,MatCheckboxModule,MatDatepickerModule,MatToolbarModule,MatMenuModule,MatChipsModule,MatIconModule,MatDialogModule,MatCardModule],
 })
 export class CustomMaterialComponent { }
