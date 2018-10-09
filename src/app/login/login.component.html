@@ -1,3 +1,25 @@
-<p>
-  login works!
-</p>
+<app-header-login></app-header-login>
+
+<div fxLayout="column container">
+
+		<form (ngSubmit)="handleSubmit()" [formGroup]="userForm" class="formField_block formField_back--color" fxLayout="column" fxLayoutAlign="center none">
+		<h1>Formulaire de connexion</h1>
+
+		<mat-form-field>
+			<input matInput placeholder="Entre ton identifiant" [formControl]="identifiantCtrl">
+      <mat-error *ngIf="identifiantCtrl.dirty && identifiantCtrl.invalid"  >{{getErrorMessageIdentifier()}}</mat-error>
+		</mat-form-field>
+
+		<mat-form-field >
+			<input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [formControl]="passwordCtrl">
+			<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+			<mat-error *ngIf="passwordCtrl.dirty && passwordCtrl.invalid"  >{{getErrorMessagePassword()}}</mat-error>
+		</mat-form-field>
+
+		<div fxLayout="row" fxLayoutAlign="end none">
+			<button mat-flat-button class="button--spacing" (click)="backToHomePage()">Annuler</button>
+			<button mat-flat-button	type="submit" [disabled]="userForm.invalid">Valider</button>
+		</div>
+		</form>
+
+</div>
