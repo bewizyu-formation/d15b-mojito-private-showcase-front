@@ -9,13 +9,17 @@
   height: 64px;
   background-color: #4a4a4a;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 0 4px 0 rgba(0, 0, 0, 0.12);
+  justify-content: space-between;
+  color: white;
+}
+
+.fleche {
+  background: #4a4a4a;
 }
 
 .title {
   font-family: Roboto;
   font-size: 36px;
-  color: white;
-  margin-left: 40%;
   padding-top: 13px;
   justify-content: center;
 }

@@ -22,6 +22,14 @@ export class HomeArtistComponent implements OnInit {
     this.router.navigate(['home/' + this.login + '/event']);
   }
 
+  navigateToPageArtist() {
+    this.router.navigate(['home/' + this.login + '/artist/user']);
+  }
+
+  navigateToCreateEvent() {
+    this.router.navigate(['home/' + this.login + '/createEvent']);
+  }
+
   ngOnInit() {
   }
 }
