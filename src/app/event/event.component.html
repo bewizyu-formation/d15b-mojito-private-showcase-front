@@ -1,3 +1,35 @@
-<p>
-  event works!
-</p>
+<mat-toolbar  class="header nav_color--black">
+  <button class="fleche" (click)="navigateToHomeArtiste ()"><img src="../../assets/login/arrow-back.png"> </button>
+  <p class="title">Evènements</p>
+</mat-toolbar>
+
+<mat-toolbar class="rectangle">
+
+  <mat-toolbar-row class="subtitle">
+    <p >Filtrer les évènements</p>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="filtre">
+    <div >
+      <mat-checkbox class="checkbox">Invitations</mat-checkbox>
+      <mat-checkbox class="checkbox">Organisateur</mat-checkbox>
+      <mat-checkbox class="checkbox">A venir</mat-checkbox>
+      <mat-checkbox class="checkbox">Passés</mat-checkbox>
+    </div>
+  </mat-toolbar-row >
+
+  <mat-toolbar-row class="rectangleEvent">
+    <mat-card class="date">date</mat-card>
+    <img class="avatar" src="../../assets/images/avatarDefaut.jpg">
+
+    <div fxFlex="row">
+      <p class=""nom-artiste>Nom Artiste</p>
+      <img class="icone" src="../../assets/images/baseline_email_black_18dp.png">
+      <a class="coordonnees">adresse</a>
+    </div>
+  </mat-toolbar-row>
+
+
+
+
+</mat-toolbar>
