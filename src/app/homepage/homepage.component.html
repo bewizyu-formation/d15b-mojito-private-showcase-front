@@ -1,3 +1,53 @@
-<p>
-  homepage works!
-</p>
+<div class = "page">
+
+  <mat-toolbar class="header" >
+  <p class="titlePage">Private Showcase</p>
+    <span class="config-button" >
+      <span class="button"><a (click)="navigateToLogin()"> Se connecter </a> </span>
+      <span>|</span>
+      <span class="button"><a (click)="navigateToInscription()"> S'inscrire</a></span>
+    </span>
+  </mat-toolbar>
+
+  <div>
+    <img class="image" src="../../assets/images/banni-re.jpg"
+         srcset="../../assets/images/banni-re@2x.jpg 2x,
+                 ../../assets/images/banni-re@3x.jpg 3x">
+  </div>
+
+  <div class="texte">
+    <p class="phrase1">Private ShowCase est une plateforme web permettant la mise en relation de
+      musiciens avec des particuliers qui souhaitent organiser des concerts chez eux.</p>
+    <p class="phrase2">Les spectateurs sont directement invités par l'organisateur, une participation pourra
+    être demandée pour le cachet des artistes.</p>
+  </div>
+
+    <mat-toolbar-row class="cards-actor">
+
+      <div class="card">
+        <img class="avatar" src="../../assets/images/circle-image.jpg">
+        <div>
+          <p class ="titre-avatar">Musiciens</p>
+          <p class="description-avatar">Proposez des concerts privés</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="avatar" src="../../assets/images/spectateur.jpg">
+        <div class = "legendes">
+          <p class ="titre-avatar">Spectateurs</p>
+          <p class="description-avatar">Vivez une expérience unique</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="avatar" src="../../assets/images/organisateur.jpg">
+        <div class = "legendes">
+          <p class ="titre-avatar">Organisateur</p>
+          <p class="description-avatar">Partagez vos coups de coeur</p>
+        </div>
+      </div>
+
+  </mat-toolbar-row>
+
+</div>
