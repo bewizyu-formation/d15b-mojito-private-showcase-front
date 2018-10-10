@@ -18,19 +18,17 @@ import {EventComponent} from './event/event.component';
 import {FormulaireEventComponent} from './formulaire-event/formulaire-event.component';
 import {ChangeUserComponent} from './change-user/change-user.component';
 import {HomeArtistUserComponent} from './home-artist-user/home-artist-user.component';
+import {HomeArtistAdminComponent} from './home-artist-admin/home-artist-admin.component';
 
 
 export const ROUTES: Routes = [
   {path: PATH_HOME_LOGOUT , component : HomepageComponent},
   {path: PATH_INSCRIPTION , component : InscriptionComponent},
   {path: PATH_LOGIN , component : LoginComponent},
-  {path: PATH_HOME_LOGGED , component : HomeArtistComponent,
-    children : [
-      {path: PATH_ARTISTE_USER, component: HomeArtistUserComponent},
-      {path: PATH_ARTISTE_ADMIN, component: HomeArtistComponent}
-    ]
-  },
-  {path: PATH_EVENT , component : EventComponent},
+  {path: PATH_HOME_LOGGED, component : HomeArtistComponent},
+  {path: PATH_ARTISTE_USER, component: HomeArtistUserComponent},
+  {path: PATH_ARTISTE_ADMIN, component: HomeArtistAdminComponent},
+  {path: PATH_EVENT, component : EventComponent},
   {path: PATH_CREATE_EVENT , component : FormulaireEventComponent},
   {path: PATH_CHANGE_USER , component : ChangeUserComponent}
 ];

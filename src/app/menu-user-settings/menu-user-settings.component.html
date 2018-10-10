@@ -1,0 +1,20 @@
+<button mat-icon-button [matMenuTriggerFor]="menu2">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu2="matMenu">
+  <div *ngIf="isArtist"
+    mat-menu-item
+    (click)="navigateToHomeArtistAdmin()">
+    <mat-icon>music_note</mat-icon>
+    <span>Artistes</span>
+  </div>
+  <div mat-menu-item (click)="navigateToChangeUser()">
+    <mat-icon>settings</mat-icon>
+    <span>Profil</span>
+  </div>
+  <div mat-menu-item>
+    <mat-icon>clear</mat-icon>
+    <span>Déconnexion</span>
+  </div>
+</mat-menu>
+

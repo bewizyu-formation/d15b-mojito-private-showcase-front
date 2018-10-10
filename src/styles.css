@@ -1,6 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./assets/fonts/HelveticaNeue.ttf');
+}
+
+html * {
+  font-family: Helvetica Neue;
+}
+
+body {
+  margin: 0;
   background-color:#9b9b9b;
+}
+
+h1, h2 {
+  font-weight: lighter;
 }
 
 .nav_color--black{

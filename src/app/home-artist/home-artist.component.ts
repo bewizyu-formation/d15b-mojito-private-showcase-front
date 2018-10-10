@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {PATH_HOME_LOGOUT} from '../constantes.routes';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-home-artist',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeArtistComponent implements OnInit {
 
-  constructor() { }
+  login = 1111;
+
+  constructor(private router: Router) { }
+
+  navigateToHomePage() {
+    this.router.navigate([PATH_HOME_LOGOUT]);
+  }
+
+  navigateToEvent() {
+    this.router.navigate(['home/' + this.login + '/event']);
+  }
 
   ngOnInit() {
   }
-
 }
