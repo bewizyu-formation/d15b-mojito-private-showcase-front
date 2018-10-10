@@ -20,6 +20,7 @@ import {CustomMaterialComponent} from './CustomMaterialComponent';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { DescriptionArtisteComponent } from './description-artiste/description-artiste.component';
 import { HeaderLoginComponent } from './header-login/header-login.component';
+import {MenuUserSettingsComponent} from './menu-user-settings/menu-user-settings.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HeaderLoginComponent } from './header-login/header-login.component';
     HomeArtistComponent,
     HeaderLoginComponent,
     HomeArtistComponent,
-    DescriptionArtisteComponent
+    DescriptionArtisteComponent,
+    MenuUserSettingsComponent,
   ],
   imports: [
     BrowserModule,
