@@ -21,6 +21,8 @@ export class InscriptionComponent implements OnInit {
   descriptionCtrl: FormControl;
   userForm: FormGroup;
   user = new User();
+  hidePassword = true;
+  hidePasswordConfirm = true;
 
   validArtist = false;
   villeList = ['lille', 'perth'];
