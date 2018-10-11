@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {User} from "../model/User";
-import {Router} from "@angular/router";
-import {PATH_HOME_LOGOUT} from "../constantes.routes";
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {User} from '../model/User';
+import {Router} from '@angular/router';
+import {PATH_HOME_LOGOUT} from '../constantes.routes';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   userForm: FormGroup;
   user = new User();
 
-  constructor(fb:FormBuilder,private router:Router) {
-    this.passwordCtrl = fb.control('',[Validators.required, Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$')]);
+  constructor(fb: FormBuilder, private router: Router) {
+    this.passwordCtrl = fb.control('', [Validators.required, Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$')]);
     this.identifiantCtrl = fb.control('', Validators.required);
     this.userForm = fb.group({
       identifiantCtrl: this.identifiantCtrl,
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   // Message d'erreur  pour le login
-  getErrorMessageIdentifier(){
+  getErrorMessageIdentifier() {
     return this.passwordCtrl.hasError('required') ? 'Entre un Login' : '';
   }
   // Message d'erreur  pour le password
@@ -36,11 +36,11 @@ export class LoginComponent implements OnInit {
   }
 
   // validation
-  handleSubmit(){
+  handleSubmit() {
 
   }
 
-  navigateToHomePage(){
+  navigateToHomePage() {
     this.router.navigate([PATH_HOME_LOGOUT]);
   }
   ngOnInit() {

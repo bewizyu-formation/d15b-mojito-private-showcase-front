@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 })
 export class EventComponent implements OnInit {
 
-  login: string = 'nnnnnn';
+  login = 'nnnnnn';
 
   constructor(private router: Router) { }
 

@@ -1,20 +1,20 @@
 export class User {
-  private _identifiant: string;
+  private _username: string;
   private _password: string;
   private _email: string;
   private _ville: string;
-  constructor(_identifiant?: string, _password?: string, _email?:string,_ville?: string){
-    this._identifiant = _identifiant;
+  constructor(_username?: string, _password?: string, _email?: string, _ville?: string) {
+    this._username = _username;
     this._password = _password;
     this._email = _email;
     this._ville = _ville;
   }
-  get identifiant(): string {
-    return this._identifiant;
+  get username(): string {
+    return this._username;
   }
-  set identifiant(value: string) {
-    console.log('SET _identifiant', value);
-    this._identifiant = value;
+  set username(value: string) {
+    console.log('SET _username', value);
+    this._username = value;
   }
   get password(): string {
     return this._password;
