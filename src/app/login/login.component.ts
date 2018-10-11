@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   passwordCtrl: FormControl;
   userForm: FormGroup;
   user = new User();
+  hide = true;
 
   constructor(fb: FormBuilder, private router: Router) {
     this.passwordCtrl = fb.control('', [Validators.required, Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$')]);
