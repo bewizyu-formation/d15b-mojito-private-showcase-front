@@ -1,6 +1,6 @@
 
 /* HEADER */
-.header[_ngcontent-c1] {
+.header {
   max-width: 100vw;
   height: 64px;
   margin-bottom: 80px;
@@ -10,7 +10,7 @@
   color: white;
 }
 
-.title[_ngcontent-c1] {
+.title {
   font-size: 36px;
   padding-right: 280px;
 }

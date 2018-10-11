@@ -47,8 +47,8 @@ import {MenuUserSettingsComponent} from './menu-user-settings/menu-user-settings
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     CustomMaterialComponent,
-    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

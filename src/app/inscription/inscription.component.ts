@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {User} from "../model/User";
-import {Router} from "@angular/router";
-import {PATH_HOME_LOGOUT} from "../constantes.routes";
-import {isErrorMatchEquals} from "../validators/isErrorMatchEquals";
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {User} from '../model/User';
+import {Router} from '@angular/router';
+import {PATH_HOME_LOGOUT} from '../constantes.routes';
+import {isErrorMatchEquals} from '../validators/isErrorMatchEquals';
 
 @Component({
   selector: 'app-inscription',
@@ -15,28 +15,30 @@ export class InscriptionComponent implements OnInit {
   identifiantCtrl: FormControl;
   passwordCtrl: FormControl;
   villeCtrl: FormControl;
-  emailCtrl:FormControl;
-  passwordConfirmCtrl:FormControl;
-  nameArtisteCtrl:FormControl;
-  descriptionCtrl:FormControl;
+  emailCtrl: FormControl;
+  passwordConfirmCtrl: FormControl;
+  nameArtisteCtrl: FormControl;
+  descriptionCtrl: FormControl;
   userForm: FormGroup;
   user = new User();
+  hidePassword = true;
+  hidePasswordConfirm = true;
 
   validArtist = false;
-  villeList = ['lille','perth'];
-  constructor(fb:FormBuilder,private router:Router) {
+  villeList = ['lille', 'perth'];
+  constructor(fb: FormBuilder, private router: Router) {
 
     this.passwordCtrl = fb.control('', Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$'));
     this.identifiantCtrl = fb.control('', Validators.required);
     this.villeCtrl = fb.control('', Validators.required);
-    this.passwordConfirmCtrl = fb.control('',Validators.required);
+    this.passwordConfirmCtrl = fb.control('', Validators.required);
     this.emailCtrl = fb.control('', [Validators.required, Validators.email]);
-    this.nameArtisteCtrl = fb.control('',Validators.required);
-    this.descriptionCtrl = fb.control('',Validators.required);
+    this.nameArtisteCtrl = fb.control('', Validators.required);
+    this.descriptionCtrl = fb.control('', Validators.required);
     this.userForm = fb.group({
       identifiantCtrl: this.identifiantCtrl,
-      villeCtrl:this.villeCtrl,
-      emailCtrl:this.emailCtrl,
+      villeCtrl: this.villeCtrl,
+      emailCtrl: this.emailCtrl,
       passwordCtrl: this.passwordCtrl,
       passwordConfirmCtrl: this.passwordConfirmCtrl,
       nameArtisteCtrl: this.nameArtisteCtrl,
@@ -44,20 +46,20 @@ export class InscriptionComponent implements OnInit {
     }, {validator: isErrorMatchEquals});
   }
   // Checkbox affiche ou non les field artiste
-  showAristeCheckBox(){
+  showAristeCheckBox() {
     this.descriptionCtrl.setValue('');
     this.nameArtisteCtrl.setValue('');
     this.validArtist = !this.validArtist;
   }
 
-  showOrHide(){
+  showOrHide() {
     return this.validArtist;
   }
   // END -------------------------------
 
 
   // Message d'erreur  pour le login
-  getErrorMessageIdentifier(){
+  getErrorMessageIdentifier() {
     return this.passwordCtrl.hasError('required') ? 'Entre un Login' : 'Entre un Logins';
   }
   // Message d'erreur  pour le password
@@ -74,36 +76,37 @@ export class InscriptionComponent implements OnInit {
         '';
   }
   // Message d'erreur  pour l'artiste
-  getErrorMessageNameArtist(){
+  getErrorMessageNameArtist() {
     return this.nameArtisteCtrl.hasError('required') ? 'Entre un nom dartiste' : '';
   }
 
-  getErrorMessageDescriptionArtiste(){
+  getErrorMessageDescriptionArtiste() {
     return this.descriptionCtrl.hasError('required') ? 'Entre une description' : '';
   }
 
 // confirmation du password
   onPasswordInput() {
-    if (this.userForm.hasError('passwordMismatch'))
+    if (this.userForm.hasError('passwordMismatch')) {
       this.passwordConfirmCtrl.setErrors([{'passwordMismatch': true}]);
-    else
+    } else {
       this.passwordConfirmCtrl.setErrors(null);
+    }
   }
 
   // validation
-  handleSubmit(){
+  handleSubmit() {
 
   }
 
-  navigateToHomePage(){
+  navigateToHomePage() {
     this.router.navigate([PATH_HOME_LOGOUT]);
   }
 
   ngOnInit() {
-      if( this.validArtist){
+      if ( this.validArtist) {
         this.descriptionCtrl.setValue('');
         this.nameArtisteCtrl.setValue('');
-      }else {
+      } else {
         this.descriptionCtrl.setValue(' ');
         this.nameArtisteCtrl.setValue(' ');
       }
