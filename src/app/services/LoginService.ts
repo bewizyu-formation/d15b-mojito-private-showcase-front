@@ -11,15 +11,15 @@ export class LoginService {
 
   constructor(private api: ApiService) {}
 
-  // addUserLogin() {
-  //   return new Promise( (resolve) => {
-  //     this.api.getLogin(this.user.username, this.user.password)
-  //       .then(() => {
-  //         resolve(this.user);
-  //       })
-  //       .catch(error => console.log('Error : ', error));
-  //     }
-  //
-  //   );
-  // }
+  addUserLogin() {
+    return new Promise( (resolve) => {
+      this.api.getLogin(this.user.username, this.user.password)
+        .then(() => {
+          resolve(this.user);
+        })
+        .catch(error => console.log('Error : ', error));
+      }
+
+    );
+  }
 }
