@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {User} from '../model/User';
 import {Router} from '@angular/router';
 import {PATH_HOME_LOGOUT} from '../constantes.routes';
+import {LoginService} from '../services/LoginService';
 
 @Component({
   selector: 'app-login',
@@ -16,13 +17,18 @@ export class LoginComponent implements OnInit {
   user = new User();
   hide = true;
 
-  constructor(fb: FormBuilder, private router: Router) {
+  constructor(fb: FormBuilder, private router: Router , private loginService: LoginService) {
     this.passwordCtrl = fb.control('', [Validators.required, Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$')]);
     this.identifiantCtrl = fb.control('', Validators.required);
     this.userForm = fb.group({
       identifiantCtrl: this.identifiantCtrl,
       password: this.passwordCtrl
     });
+  }
+  // validation
+  handleSubmit() {
+    this.loginService.addUserLogin(this.identifiantCtrl.value, this.passwordCtrl.value)
+      .then();
   }
 
   // Message d'erreur  pour le login
@@ -36,10 +42,7 @@ export class LoginComponent implements OnInit {
         '';
   }
 
-  // validation
-  handleSubmit() {
 
-  }
 
   navigateToHomePage() {
     this.router.navigate([PATH_HOME_LOGOUT]);

@@ -17,8 +17,4 @@ export class ApiService {
       {observe: 'response'}
     ).toPromise();
   }
-
-
-
-
 }
