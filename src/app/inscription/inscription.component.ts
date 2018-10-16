@@ -14,7 +14,7 @@ import {LoginService} from '../services/LoginService';
 export class InscriptionComponent implements OnInit {
 
 
-
+//déclaration des propriétés d un nouvel user 
   identifiantCtrl: FormControl;
   passwordCtrl: FormControl;
   villeCtrl: FormControl;
