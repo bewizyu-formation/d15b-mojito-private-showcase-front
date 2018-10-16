@@ -14,7 +14,7 @@ import {LoginService} from '../services/LoginService';
 export class InscriptionComponent implements OnInit {
 
 
-//déclaration des propriétés d un nouvel user 
+
   identifiantCtrl: FormControl;
   passwordCtrl: FormControl;
   villeCtrl: FormControl;
@@ -104,7 +104,7 @@ export class InscriptionComponent implements OnInit {
   handleSubmit() {
     console.log('username : ' + this.identifiantCtrl.value);
     this.serviceSignUp.addUserSignUp(this.identifiantCtrl.value, this.passwordCtrl.value, this.villeCtrl.value, this.emailCtrl.value,
-   this.nameArtisteCtrl.value, this.descriptionCtrl.value)
+   this.nameArtisteCtrl.value, this.descriptionCtrl.value);
  //  serviceSignUp.addUserSignUp(this.user.username,this.user.password,this.user.email,this.user.ville,this.user.);
   }
 //  addUserSignUp() this.user.username,this.user.password,this.user.email,this.user.ville,this.user. ;
