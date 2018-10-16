@@ -18,6 +18,17 @@ export class LoginService {
           .then()
           .catch(error => console.log('Error : ', error));
       }
+
+    );
+  }
+// récupere les données de l'inscription retourne une promise et envoyer dans l'apiService
+  addUserSignUp(username, password, email, ville, artistName, descriptionCourte) {
+    return new Promise( (resolve) => {
+        this.api.signUp(username, password, email, ville, artistName, descriptionCourte)
+          .then(() => {})
+          .catch(error => console.log('Error : ', error));
+      }
+
     );
   }
 }

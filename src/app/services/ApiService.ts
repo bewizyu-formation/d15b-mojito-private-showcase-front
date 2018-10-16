@@ -17,4 +17,24 @@ export class ApiService {
       {observe: 'response'}
     ).toPromise();
   }
+/* inscription requet hhtpcli */
+  signUp(username: string, password: string, artistName: string,
+        ville: string, descriptionCourte: string , email: string): Promise<any> {
+         return this.http.post(`${environment.API_BASE_URL}/users/`, {
+        username,
+        password,
+        artistName,
+        ville,
+        descriptionCourte,
+        email
+      },
+      {observe: 'response'}
+    ).toPromise();
+  }
+
+
+
+
+
+
 }
