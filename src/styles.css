@@ -25,3 +25,7 @@ h1, h2 {
 .nav_color--black{
   background-color: #4a4a4a;
 }
+
+.artist-button span, .button, .showPassword, .fleche {
+  cursor: pointer;
+}

@@ -13,6 +13,8 @@ export class User {
     this._password = _password;
     this._email = _email;
     this._ville = _ville;
+    this._artistName = _artistName;
+    this._descriptionCourte = _descriptionCourte;
   }
 
   get username(): string {

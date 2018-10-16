@@ -52,10 +52,6 @@
 }
 
 /* MODIFICATION CURSOR WHEN ON "VOIR" & "BOOKER" */
-mat-card-actions span {
-  cursor: pointer;
-}
-
 .artist-button {
   display: flex;
   align-items: flex-end;

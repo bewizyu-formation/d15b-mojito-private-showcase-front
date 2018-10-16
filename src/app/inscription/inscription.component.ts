@@ -17,7 +17,6 @@ export class InscriptionComponent implements OnInit {
 
   identifiantCtrl: FormControl;
   passwordCtrl: FormControl;
-  villeCtrl: FormControl;
   emailCtrl: FormControl;
   passwordConfirmCtrl: FormControl;
   nameArtisteCtrl: FormControl;
@@ -28,7 +27,6 @@ export class InscriptionComponent implements OnInit {
   hidePasswordConfirm = true;
 
   validArtist = false;
-  villeList = ['lille', 'perth'];
 
 
 
@@ -37,14 +35,12 @@ export class InscriptionComponent implements OnInit {
   console.log('inscription component creer ');
     this.passwordCtrl = fb.control('', Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$'));
     this.identifiantCtrl = fb.control('', Validators.required);
-    this.villeCtrl = fb.control('', Validators.required);
     this.passwordConfirmCtrl = fb.control('', Validators.required);
     this.emailCtrl = fb.control('', [Validators.required, Validators.email]);
     this.nameArtisteCtrl = fb.control('', Validators.required);
     this.descriptionCtrl = fb.control('', Validators.required);
     this.userForm = fb.group({
       identifiantCtrl: this.identifiantCtrl,
-      villeCtrl: this.villeCtrl,
       emailCtrl: this.emailCtrl,
       passwordCtrl: this.passwordCtrl,
       passwordConfirmCtrl: this.passwordConfirmCtrl,
@@ -102,8 +98,9 @@ export class InscriptionComponent implements OnInit {
 
   // validation
   handleSubmit() {
-    console.log('username : ' + this.identifiantCtrl.value);
-    this.serviceSignUp.addUserSignUp(this.identifiantCtrl.value, this.passwordCtrl.value, this.villeCtrl.value, this.emailCtrl.value,
+    console.log('username : ' + this.identifiantCtrl.value, this.passwordCtrl.value, this.emailCtrl.value,
+      this.nameArtisteCtrl.value, this.descriptionCtrl.value);
+    this.serviceSignUp.addUserSignUp(this.identifiantCtrl.value, this.passwordCtrl.value, this.emailCtrl.value,
    this.nameArtisteCtrl.value, this.descriptionCtrl.value);
  //  serviceSignUp.addUserSignUp(this.user.username,this.user.password,this.user.email,this.user.ville,this.user.);
   }
@@ -113,9 +110,9 @@ export class InscriptionComponent implements OnInit {
   }
 
   ngOnInit() {
-      if ( this.validArtist) {
-        this.descriptionCtrl.setValue('');
-        this.nameArtisteCtrl.setValue('');
+      if (this.validArtist) {
+        this.descriptionCtrl.setValue(this.descriptionCtrl);
+        this.nameArtisteCtrl.setValue(this.nameArtisteCtrl);
       } else {
         this.descriptionCtrl.setValue(' ');
         this.nameArtisteCtrl.setValue(' ');
