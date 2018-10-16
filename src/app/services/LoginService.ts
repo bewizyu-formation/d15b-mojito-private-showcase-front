@@ -26,7 +26,7 @@ export class LoginService {
     return new Promise( (resolve) => {
         this.api.signUp(username, password, email, artistName, description)
           .then(() => {
-            console.log("SIGN UP =>", username, password, email, artistName, description);
+            console.log('SIGN UP =>', username, password, email, artistName, description);
           })
           .catch(error => console.log('Error : ', error));
       }
