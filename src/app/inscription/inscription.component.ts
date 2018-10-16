@@ -4,6 +4,7 @@ import {User} from '../model/User';
 import {Router} from '@angular/router';
 import {PATH_HOME_LOGOUT} from '../constantes.routes';
 import {isErrorMatchEquals} from '../validators/isErrorMatchEquals';
+import {LoginService} from '../services/LoginService';
 
 @Component({
   selector: 'app-inscription',
@@ -11,6 +12,8 @@ import {isErrorMatchEquals} from '../validators/isErrorMatchEquals';
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent implements OnInit {
+
+
 
   identifiantCtrl: FormControl;
   passwordCtrl: FormControl;
@@ -26,8 +29,12 @@ export class InscriptionComponent implements OnInit {
 
   validArtist = false;
   villeList = ['lille', 'perth'];
-  constructor(fb: FormBuilder, private router: Router) {
 
+
+
+  constructor(fb: FormBuilder, private router: Router,  private serviceSignUp: LoginService) {
+
+  console.log('inscription component creer ');
     this.passwordCtrl = fb.control('', Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$'));
     this.identifiantCtrl = fb.control('', Validators.required);
     this.villeCtrl = fb.control('', Validators.required);
@@ -95,9 +102,12 @@ export class InscriptionComponent implements OnInit {
 
   // validation
   handleSubmit() {
-
+    console.log('username : ' + this.identifiantCtrl.value);
+    this.serviceSignUp.addUserSignUp(this.identifiantCtrl.value, this.passwordCtrl.value, this.villeCtrl.value, this.emailCtrl.value,
+   this.nameArtisteCtrl.value, this.descriptionCtrl.value);
+ //  serviceSignUp.addUserSignUp(this.user.username,this.user.password,this.user.email,this.user.ville,this.user.);
   }
-
+//  addUserSignUp() this.user.username,this.user.password,this.user.email,this.user.ville,this.user. ;
   navigateToHomePage() {
     this.router.navigate([PATH_HOME_LOGOUT]);
   }
@@ -110,7 +120,6 @@ export class InscriptionComponent implements OnInit {
         this.descriptionCtrl.setValue(' ');
         this.nameArtisteCtrl.setValue(' ');
       }
-
 
   }
 
