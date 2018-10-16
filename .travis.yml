@@ -1,6 +1,6 @@
 sudo: required
 dist: trusty
-  ​
+
 addons:
   apt:
     sources:
@@ -13,29 +13,29 @@ addons:
       secure: $SONAR_CLOUD_TOKEN
     branches:
     - master
-  ​
+
 language: node_js
 node_js:
-- "10"
-  ​
+  - "10"
+
 branches:
   only:
   - master
-  ​
+
 install:
-- npm install
-  ​
+  - npm install
+
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
-  ​
+
 script:
-- npm run lint
-- npm run ci:test
-- npm run e2e
-- sonar-scanner
-- npm run build -- --aot --prod --build-optimizer --base-href /d15b-mojito-private-showcase-front/
-  ​
+  - npm run lint
+  - npm run ci:test
+  - npm run e2e
+  - sonar-scanner
+  - npm run build -- --aot --prod --build-optimizer --base-href /d15b-mojito-private-showcase-front/
+
 deploy:
   provider: pages
   skip_cleanup: true
