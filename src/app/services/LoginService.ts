@@ -22,10 +22,12 @@ export class LoginService {
     );
   }
 // récupere les données de l'inscription retourne une promise et envoyer dans l'apiService
-  addUserSignUp(username, password, email, ville, artistName, descriptionCourte) {
+  addUserSignUp(username, password, email, artistName, description) {
     return new Promise( (resolve) => {
-        this.api.signUp(username, password, email, ville, artistName, descriptionCourte)
-          .then(() => {})
+        this.api.signUp(username, password, email, artistName, description)
+          .then(() => {
+            console.log('SIGN UP =>', username, password, email, artistName, description);
+          })
           .catch(error => console.log('Error : ', error));
       }
 

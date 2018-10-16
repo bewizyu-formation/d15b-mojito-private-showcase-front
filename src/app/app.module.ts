@@ -21,12 +21,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { DescriptionArtisteComponent } from './description-artiste/description-artiste.component';
 import { HeaderLoginComponent } from './header-login/header-login.component';
 import {MenuUserSettingsComponent} from './menu-user-settings/menu-user-settings.component';
-import {MaterialDesignFrameworkModule} from 'angular6-json-schema-form';
 
 
 @NgModule({
   declarations: [
-
     AppComponent,
     HomepageComponent,
     InscriptionComponent,
@@ -44,7 +42,6 @@ import {MaterialDesignFrameworkModule} from 'angular6-json-schema-form';
     MenuUserSettingsComponent,
   ],
   imports: [
-    MaterialDesignFrameworkModule,
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,

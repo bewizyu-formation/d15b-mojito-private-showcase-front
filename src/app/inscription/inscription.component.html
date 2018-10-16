@@ -14,25 +14,18 @@
 
 		<mat-form-field >
 			<input matInput placeholder="Entre ton password" [type]="hidePassword ? 'password' : 'text'" [formControl]="passwordCtrl">
-			<mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+			<mat-icon matSuffix class="showPassword" (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility' : 'visibility_off'}}</mat-icon>
 			<mat-error *ngIf="passwordCtrl.dirty && passwordCtrl.invalid"  >{{getErrorMessagePassword()}}</mat-error>
 		</mat-form-field>
 		<mat-form-field >
 			<input matInput placeholder="Confrim ton password" [type]="hidePasswordConfirm ? 'password' : 'text'" [formControl]="passwordConfirmCtrl" (input)="onPasswordInput()">
-			<mat-icon matSuffix (click)="hidePasswordConfirm = !hidePasswordConfirm">{{hidePasswordConfirm ? 'visibility' : 'visibility_off'}}</mat-icon>
+			<mat-icon matSuffix class="showPassword" (click)="hidePasswordConfirm = !hidePasswordConfirm">{{hidePasswordConfirm ? 'visibility' : 'visibility_off'}}</mat-icon>
 			<mat-error *ngIf="passwordConfirmCtrl.invalid && passwordConfirmCtrl.dirty ">Mot de passe incorrect</mat-error>
 		</mat-form-field>
 
 		<mat-form-field>
 			<input matInput placeholder="Entre ton email"  [formControl]="emailCtrl">
 			<mat-error *ngIf="emailCtrl.dirty && emailCtrl.invalid">{{getErrorMessageMail()}} </mat-error>
-		</mat-form-field>
-
-		<mat-form-field>
-			<mat-select placeholder="Ville" [formControl]="villeCtrl">
-				<mat-option>None</mat-option>
-				<mat-option *ngFor="let temp of villeList" value="temp.value" >{{temp}}</mat-option>
-			</mat-select>
 		</mat-form-field>
 
 

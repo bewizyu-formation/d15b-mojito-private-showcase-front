@@ -5,14 +5,16 @@ export class User {
   private _email: string;
   private _ville: string;
   private _artistName;
-  private _descriptionCourte;
-  private ;
+  private _description;
+
   constructor(_username?: string, _password?: string, _confirmPassword?: string, _email?: string,
-              _ville?: string, _artistName?: string, _descriptionCourte?: string , ) {
+              _ville?: string, _artistName?: string, _description?: string , ) {
     this._username = _username;
     this._password = _password;
     this._email = _email;
     this._ville = _ville;
+    this._artistName = _artistName;
+    this._description = _description;
   }
 
   get username(): string {
@@ -65,11 +67,11 @@ export class User {
     this._artistName = value;
   }
 
-  get descriptionCourte() {
-    return this._descriptionCourte;
+  get description() {
+    return this._description;
   }
 
-  set descriptionCourte(value) {
-    this._descriptionCourte = value;
+  set description(value) {
+    this._description = value;
   }
 }
