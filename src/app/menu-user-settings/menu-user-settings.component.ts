@@ -11,15 +11,14 @@ export class MenuUserSettingsComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  login = 2222;
   isArtist = true;
 
   navigateToHomeArtistAdmin() {
-    this.router.navigate(['home/' + this.login + '/artist/artist']);
+    this.router.navigate(['home/' + '/artist/artist']);
   }
 
   navigateToChangeUser() {
-    this.router.navigate(['home/' + this.login + '/userAccount']);
+    this.router.navigate(['home/' + '/userAccount']);
   }
 
   ngOnInit() {

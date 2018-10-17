@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {PATH_HOME_LOGGED} from '../constantes.routes';
 
 @Component({
   selector: 'app-event',
@@ -8,12 +9,10 @@ import {Router} from '@angular/router';
 })
 export class EventComponent implements OnInit {
 
-  login = 'nnnnnn';
-
   constructor(private router: Router) { }
 
   navigateToHomeArtiste () {
-    this.router.navigate(['home', this.login]);
+    this.router.navigate([PATH_HOME_LOGGED]);
   }
 
   ngOnInit() {

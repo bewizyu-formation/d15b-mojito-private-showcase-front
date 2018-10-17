@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {User} from '../model/User';
 import {Router} from '@angular/router';
-import {PATH_HOME_LOGOUT} from '../constantes.routes';
+import {PATH_HOME_LOGGED, PATH_HOME_LOGOUT} from '../constantes.routes';
 import {LoginService} from '../services/LoginService';
 
 @Component({
@@ -17,7 +17,10 @@ export class LoginComponent implements OnInit {
   user = new User();
   hide = true;
 
-  constructor(fb: FormBuilder, private router: Router , private loginService: LoginService) {
+  token: string;
+
+
+  constructor(fb: FormBuilder, private router: Router , private loginService: LoginService, private route: Router) {
     this.passwordCtrl = fb.control('', [Validators.required, Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$')]);
     this.identifiantCtrl = fb.control('', Validators.required);
     this.userForm = fb.group({
@@ -27,8 +30,10 @@ export class LoginComponent implements OnInit {
   }
   // validation
   handleSubmit() {
-    this.loginService.addUserLogin(this.identifiantCtrl.value, this.passwordCtrl.value)
-      .then();
+    this.loginService.login(this.identifiantCtrl.value, this.passwordCtrl.value)
+      .then((token: string) => this.token = token)
+      .then(() => this.route.navigate([PATH_HOME_LOGGED]))
+      .catch(error => console.log('Error : ', error));
   }
 
   // Message d'erreur  pour le login
@@ -42,11 +47,10 @@ export class LoginComponent implements OnInit {
         '';
   }
 
-
-
   navigateToHomePage() {
     this.router.navigate([PATH_HOME_LOGOUT]);
   }
+
   ngOnInit() {
   }
 

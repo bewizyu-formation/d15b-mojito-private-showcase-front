@@ -14,13 +14,14 @@ import { FormulaireEventComponent } from './formulaire-event/formulaire-event.co
 import { ChangeUserComponent } from './change-user/change-user.component';
 import { HomeArtistComponent } from './home-artist/home-artist.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CustomMaterialComponent} from './CustomMaterialComponent';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { DescriptionArtisteComponent } from './description-artiste/description-artiste.component';
 import { HeaderLoginComponent } from './header-login/header-login.component';
 import {MenuUserSettingsComponent} from './menu-user-settings/menu-user-settings.component';
+import {TokenInterceptorService} from './services/TokenInterceptor';
 
 
 @NgModule({
@@ -34,7 +35,6 @@ import {MenuUserSettingsComponent} from './menu-user-settings/menu-user-settings
     EventComponent,
     FormulaireEventComponent,
     ChangeUserComponent,
-    HomeArtistComponent,
     HomeArtistComponent,
     HeaderLoginComponent,
     HomeArtistComponent,
@@ -51,7 +51,9 @@ import {MenuUserSettingsComponent} from './menu-user-settings/menu-user-settings
     FlexLayoutModule,
     CustomMaterialComponent,
   ],
-  providers: [],
+  providers: [
+    {provide : HTTP_INTERCEPTORS, useClass : TokenInterceptorService, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
