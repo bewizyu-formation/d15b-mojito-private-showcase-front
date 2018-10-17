@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {PATH_HOME_LOGGED} from '../constantes.routes';
 
 @Component({
   selector: 'app-formulaire-event',
@@ -10,10 +11,8 @@ export class FormulaireEventComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  login = 111;
-
   navigateToHomeArtiste() {
-    this.router.navigate(['home/' + this.login]);
+    this.router.navigate([PATH_HOME_LOGGED]);
   }
 
   ngOnInit() {
